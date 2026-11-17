@@ -2,7 +2,7 @@
 #include <d3d11.h>
 #include <dxgi.h>
 #include <cstdint>
-#include "math.h"
+#include "vmath.h"
 
 namespace Render {
     bool init(IDXGISwapChain* swapChain);
