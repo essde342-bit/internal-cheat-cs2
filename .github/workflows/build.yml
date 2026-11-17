@@ -1,0 +1,35 @@
+name: Build CS2 Internal
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup MSVC
+      uses: microsoft/setup-msbuild@v2
+    
+    - name: Configure CMake
+      run: cmake -B build -A x64
+    
+    - name: Build
+      run: cmake --build build --config Release
+    
+    - name: Upload DLL
+      uses: actions/upload-artifact@v4
+      with:
+        name: cs2-internal-dll
+        path: build/dll/Release/cs2_internal.dll
+        
+    - name: Upload Injector
+      uses: actions/upload-artifact@v4
+      with:
+        name: cs2-injector
+        path: build/injector/Release/injector.exe
