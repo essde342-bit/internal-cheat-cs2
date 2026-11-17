@@ -1,0 +1,15 @@
+#pragma once
+#include <Windows.h>
+#include <cstdint>
+#include <vector>
+#include <string>
+#include <Psapi.h>
+
+namespace Memory {
+    struct ModuleInfo {
+        uintptr_t base;
+        size_t size;
+    };
+    
+    ModuleInfo get_module_info(const char* name);
+}
