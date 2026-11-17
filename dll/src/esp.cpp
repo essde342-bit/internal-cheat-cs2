@@ -3,7 +3,7 @@
 #include "offsets.h"
 #include "render.h"
 #include "config.h"
-#include "math.h"
+#include "vmath.h"
 #include <cstring>
 #include <cmath>
 
@@ -49,7 +49,7 @@ uintptr_t CCSPlayerPawn::get_bone_array() {
 }
 
 int CCSPlayerPawn::get_bone_count() {
-    return 64; 
+    return 64;
 }
 
 namespace ESP {
