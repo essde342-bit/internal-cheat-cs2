@@ -1,6 +1,6 @@
 #pragma once
 #include <cstdint>
-#include "math.h"
+#include "vmath.h"
 
 class CEntityIdentity {
 public:
